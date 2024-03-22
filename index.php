@@ -113,6 +113,13 @@
         #cookieBanner button:hover {
             background-color: #0056b3;
         }
+        footer {
+            /* background-color: #f8f9fa; */
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -282,9 +289,18 @@
     </section>
     <section id="media">
         <center><h4 class="text-white pt-5"><b>ME<span class="text-warning">DIA</span></b></h4></center>
+
     </section>
     <section id="contact-us">
-        <center><h4 class="text-white pt-5"><b>CONTACT<span class="text-warning"> US</span></b></h4></center>
+        <footer>
+            <div class="container text-center">
+                <h4 class="text-white"><b>CONTACT<span class="text-warning"> US</span></b></h4>
+                <p class="text-white">manager.ie@imail.iitm.ac.in</p>
+                <p class="text-white">+91 123-456-7890</p>
+                <p class="text-white">Sudha & Shankar Innovation Hub, IIT Madras</p>
+                <span class="text-white">© 2024 Office of Innovation and Entrepreneurship, IIT Madras</span>
+            </div>
+        </footer>
     </section>
     <script>
         const cookiesAccepted = localStorage.getItem('cookiesAccepted');
