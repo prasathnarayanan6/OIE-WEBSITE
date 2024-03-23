@@ -145,12 +145,12 @@
                 <li class="nav-item">
                     <a class="nav-link text-white" href="#about-us"><b><span class="text-danger"><b>|</b></span> About Us <span class="text-success"><b>|</b></span></b></a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link text-white" href="#careers"><b><span class="text-danger"><b>|</b></span> Careers <span class="text-success"><b>|</b></span></b></a>
-                </li> -->
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#media"><b><span class="text-danger"><b>|</b></span> Media <span class="text-success"><b>|</b></span></b></a>
+                    <a class="nav-link text-white" href="#achievements"><b><span class="text-danger"><b>|</b></span> Achievements <span class="text-success"><b>|</b></span></b></a>
                 </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link text-white" href="#media"><b><span class="text-danger"><b>|</b></span> Media <span class="text-success"><b>|</b></span></b></a>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link text-white" href="#contact-us"><b><span class="text-danger"><b>|</b></span> Contact Us <span class="text-success"><b>|</b></span></b></a>
                 </li>
@@ -287,8 +287,8 @@
             </div>
         </div>
     </section>
-    <section id="media">
-        <center><h4 class="text-white pt-5"><b>ME<span class="text-warning">DIA</span></b></h4></center>
+    <section id="achievements">
+        <center><h4 class="text-white pt-5"><b>WE<span class="text-warning"> PROGRESS</span></b></h4></center>
 
     </section>
     <section id="contact-us">
@@ -317,9 +317,10 @@
         });
     document.addEventListener("DOMContentLoaded", function() {
         const aboutUsLink = document.querySelector('a[href="#about-us"]');
-        const mediaLink = document.querySelector('a[href="#media"]');
+        // const mediaLink = document.querySelector('a[href="#media"]');
         const home = document.querySelector('a[href="#home"]');
         const contactUs = document.querySelector('a[href="#contact-us"');
+        const Achievements = document.querySelector('a[href="#achievements"');
         aboutUsLink.addEventListener("click", function(event) {
             event.preventDefault();
             const section = document.getElementById("about-us");
@@ -329,15 +330,24 @@
                 document.body.classList.remove("scroll-transition");
             }, 500); 
         });
-        mediaLink.addEventListener("click", function(event) {
+        Achievements.addEventListener("click", function(events){
             event.preventDefault();
-            const section = document.getElementById("media");
-            section.scrollIntoView({ behavior: "smooth" });
+            const section = document.getElementById("achievements");
+            section.scrollIntoView({behavior: "smooth"});
             document.body.classList.add("scroll-transition");
             setTimeout(function() {
                 document.body.classList.remove("scroll-transition");
-            }, 500); 
+            }, 500);
         });
+        // mediaLink.addEventListener("click", function(event) {
+        //     event.preventDefault();
+        //     const section = document.getElementById("media");
+        //     section.scrollIntoView({ behavior: "smooth" });
+        //     document.body.classList.add("scroll-transition");
+        //     setTimeout(function() {
+        //         document.body.classList.remove("scroll-transition");
+        //     }, 500); 
+        // });
         home.addEventListener("click", function(event) {
             event.preventDefault();
             const section = document.getElementById("home");
