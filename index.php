@@ -148,9 +148,6 @@
                 <li class="nav-item">
                     <a class="nav-link text-white" href="#achievements"><b><span class="text-danger"><b>|</b></span> Achievements <span class="text-success"><b>|</b></span></b></a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link text-white" href="#media"><b><span class="text-danger"><b>|</b></span> Media <span class="text-success"><b>|</b></span></b></a>
-                </li> -->
                 <li class="nav-item">
                     <a class="nav-link text-white" href="#contact-us"><b><span class="text-danger"><b>|</b></span> Contact Us <span class="text-success"><b>|</b></span></b></a>
                 </li>
@@ -207,7 +204,26 @@
                 <center><p class="text-white mt-3">To deliver administrative support to innovation & entrepreneurship activities that include outreach, fundraising, project management, IP, and funding.</p></center><br>
                 <center><h4 class="text-white mt-4"><b>OUR <span class="text-warning">MISSION</span></h4></b></center>
                 <center><p class="text-white mt-3" style="line-height: 2.0;">To provide training in entrepreneurship through structured programs and guidance through experienced and visionary leadership to coordinate events, visits, workshops, and external programs, generating leads for future advancements.</p></center>
-            </div><br>
+            </div>
+            <section id="achievements">
+                    <div class="container">
+                            <center><h4 class="text-white pt-5"><b>WE<span class="text-warning"> PROGRESS</span></b></h4></center>
+                            <center><div class="row">
+                                <div class="col-sm">
+                                    <p id='0101' class="fs-2 text-light">10+</p>
+                                    <p class="text-light">TOTAL IP FILED</p>
+                                </div>
+                                <div class="col-sm">
+                                    <p id='0102' class="fs-2 text-light">$8M+ </p>
+                                    <p class="text-light">TOTAL FUND RAISED</p>
+                                </div>
+                                <div class="col-sm">
+                                    <p class="fs-2 text-light"><span id='0103'>20</span>+</p>
+                                    <p class="text-light align-content-center">TOTAL PROJECTS HANDLED</p>
+                                </div>
+                            </div></center>
+                    </div>
+            </section><br>
             <div class="our-team mt-4" id="about-us">
                 <center><h4 class="text-white"><b>OUR <span class="text-warning">TEAM</span></b></h4></center>
                 <center>
@@ -216,7 +232,6 @@
                         <div class="round">
                             <img src="./img//facultyadvisor.svg" alt="" width="240px">
                             <a href="https://www.linkedin.com/in/prabhu-rajagopal-041ab74/"><span class="linkedin-logo text-dark" style="font-size: 38px;"><i class="fab fa-linkedin"></i></span></a>
-                            <!-- <img src="./img/linkedin_plain_logo_icon_146432.png" class="linkedin-logo" alt="LinkedIn Logo" width="10px"> -->
                         </div>
                         <p class="text-white mt-1 text-sm">PROF. PRABHU RAJAGOPAL<br><span class="text-secondary text-sm">FACULTY IN-CHARGE</span></p>
                     </div> 
@@ -277,7 +292,7 @@
                     </div>
                     <div class="col-md-4 col-12 position-relative">
                         <div class="round">
-                            <img src="./img/file.jpg" class="" alt="" width="200px">
+                            <img src="./img/sriram.png" class="" alt="" width="200px">
                             <a href="https://www.linkedin.com/in/nandhini-k-s-71777748/"><span class="linkedin-logo text-dark" style="font-size: 30px;"><i class="fab fa-linkedin"></i></span></a>
                         </div>   
                         <p class="text-white mt-1 text-sm">SRIRAM<br><span class="text-secondary text-sm">JUNIOR TECHNICIAN - OIE</span></p>  
@@ -286,17 +301,12 @@
                 </center>
             </div>
         </div>
-    </section>
-    <section id="achievements">
-        <center><h4 class="text-white pt-5"><b>WE<span class="text-warning"> PROGRESS</span></b></h4></center>
-
-    </section>
+    </section><br>
     <section id="contact-us">
         <footer>
             <div class="container text-center">
                 <h4 class="text-white"><b>CONTACT<span class="text-warning"> US</span></b></h4>
-                <p class="text-white">manager.ie@imail.iitm.ac.in</p>
-                <p class="text-white">+91 123-456-7890</p>
+                <p class="text-white">office.ie@imail.iitm.ac.in</p>
                 <p class="text-white">Sudha & Shankar Innovation Hub, IIT Madras</p>
                 <span class="text-white">© 2024 Office of Innovation and Entrepreneurship, IIT Madras</span>
             </div>
@@ -339,15 +349,6 @@
                 document.body.classList.remove("scroll-transition");
             }, 500);
         });
-        // mediaLink.addEventListener("click", function(event) {
-        //     event.preventDefault();
-        //     const section = document.getElementById("media");
-        //     section.scrollIntoView({ behavior: "smooth" });
-        //     document.body.classList.add("scroll-transition");
-        //     setTimeout(function() {
-        //         document.body.classList.remove("scroll-transition");
-        //     }, 500); 
-        // });
         home.addEventListener("click", function(event) {
             event.preventDefault();
             const section = document.getElementById("home");
@@ -367,6 +368,34 @@
             }, 500); 
         });
     });
+    function animate(obj, initVal, lastVal, duration) {
+         let startTime = null;
+         let currentTime = Date.now();
+         const step = (currentTime ) => {
+
+        if (!startTime) {
+            startTime = currentTime ;
+        }
+        const progress = Math.min((currentTime - startTime)/ duration, 1);
+        obj.innerHTML = Math.floor(progress * (lastVal - initVal) + initVal);
+      if (progress < 1) 
+      {
+         window.requestAnimationFrame(step);
+      } else 
+      {
+            window.cancelAnimationFrame(window.requestAnimationFrame(step));
+      }
+      };
+        window.requestAnimationFrame(step);
+      }
+      let text1 = document.getElementById('0101');
+      let text2 = document.getElementById('0102');
+      let text3 = document.getElementById('0103');
+      const load = () => {
+         animate(text1, 0, 511, 7000);
+         animate(text2, 0, 232, 7000);
+         animate(text3, 100, 25, 7000);
+      }
     </script>
     <script src="./bootstrap/js/bootstrap.min.js"></script>
     <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
